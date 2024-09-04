@@ -1,17 +1,18 @@
 const requestValue = (value) => {
-  let valueUser = prompt(`Ingrese el valor de ${value}:`);
-  valueUser = parseInt(valueUser)
+  let valueUser;
+  do {
+    valueUser = prompt(`Ingrese el valor de ${value}:`);
+  } while (valueUser === null || valueUser.trim() === "");
+
   return valueUser;
 };
 
 const main = () => {
-  let array = [];
   let a = requestValue("a");
   let b = requestValue("b");
+  [a, b] = [b, a];
 
-  array.push(a, b)[(a, b)] = array;
-
-  console.log(a, b);
+  alert(`El valor de a ahora es: ${a}\nEl valor de b ahora es: ${b}`);
 };
 
 main();
